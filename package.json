@@ -1,0 +1,13 @@
+{
+  "name": "test-netflix-clone",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Jacopo Marrone",
+  "license": "MIT",
+  "workspaces": {
+    "packages": [
+      "apps/*"
+    ],
+    "nohoist": []
+  }
+}
