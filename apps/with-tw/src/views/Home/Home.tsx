@@ -1,5 +1,6 @@
 import { SVGIcon } from "@/views/shared/components/svg-icon/svg-icon";
 import { AddIcon, AvatarIcons } from "@/views/shared/components/icons";
+import Link from "next/link";
 
 export const HomeView = () => (
   <>
@@ -12,7 +13,7 @@ export const HomeView = () => (
           <div className="flex justify-center flex-wrap gap-2 lg:gap-6">
             {['Luke', 'Matt', "Jane", 'Sarah'].map((user_name, i) => (
               <div key={user_name} className="group relative flex flex-col gap-1 items-center text-gray-500 hover:text-gray-50">
-                <a href="/browse" className="absolute inset-0" />
+                <Link href="/browse" className="absolute inset-0" />
                 <div className="w-[10vw] min-w-[84px] max-w-[200px] rounded-md overflow-hidden border-2 border-transparent group-hover:border-gray-50">
                   <SVGIcon icon={AvatarIcons[i % AvatarIcons.length]} />
                 </div>
@@ -21,7 +22,7 @@ export const HomeView = () => (
             ))}
             <div className="group relative flex flex-col gap-0 items-center text-gray-500 hover:text-gray-50">
               <div className="w-[10vw] min-w-[84px] max-w-[200px] rounded-md overflow-hidden group-hover:bg-gray-50 group-hover:text-gray-500">
-                <a href="#" className="absolute inset-0" />
+                <Link href="#" className="absolute inset-0" />
                 <div className="p-5">
                   <SVGIcon icon={<AddIcon />} />
                 </div>
