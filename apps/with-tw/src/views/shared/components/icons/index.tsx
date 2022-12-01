@@ -5,13 +5,13 @@ export const AddIcon = () => (
 );
 export const AvatarIcons = [
   <>
-    <svg viewBox="0 0 36 36" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="128" height="128"><title>Mary Baker</title><mask id="mask__beam" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" fill="#FFFFFF"></rect></mask><g mask="url(#mask__beam)"><rect width="36" height="36" fill="#00c16c"></rect><rect x="0" y="0" width="36" height="36" transform="translate(4 4) rotate(340 18 18) scale(1.1)" fill="#002e34" rx="36"></rect><g transform="translate(-4 -1) rotate(0 18 18)"><path d="M15 20c2 1 4 1 6 0" stroke="#FFFFFF" fill="none" stroke-linecap="round"></path><rect x="14" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#FFFFFF"></rect><rect x="20" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#FFFFFF"></rect></g></g></svg>
+    <svg viewBox="0 0 36 36" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="128" height="128"><title>Mary Baker</title><mask id="mask__beam" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" fill="#FFFFFF"></rect></mask><g mask="url(#mask__beam)"><rect width="36" height="36" fill="#00c16c"></rect><rect x="0" y="0" width="36" height="36" transform="translate(4 4) rotate(340 18 18) scale(1.1)" fill="#002e34" rx="36"></rect><g transform="translate(-4 -1) rotate(0 18 18)"><path d="M15 20c2 1 4 1 6 0" stroke="#FFFFFF" fill="none" strokeLinecap="round"></path><rect x="14" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#FFFFFF"></rect><rect x="20" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#FFFFFF"></rect></g></g></svg>
   </>,
   <>
     <svg viewBox="0 0 36 36" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="128" height="128"><title>Alicia Dickerson</title><mask id="mask__beam" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" fill="#FFFFFF"></rect></mask><g mask="url(#mask__beam)"><rect width="36" height="36" fill="#e9dfcc"></rect><rect x="0" y="0" width="36" height="36" transform="translate(7 7) rotate(37 18 18) scale(1.1)" fill="#cd5b51" rx="6"></rect><g transform="translate(3.5 3.5) rotate(-7 18 18)"><path d="M13,20 a1,0.75 0 0,0 10,0" fill="#FFFFFF"></path><rect x="12" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#FFFFFF"></rect><rect x="22" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#FFFFFF"></rect></g></g></svg>
   </>,
   <>
-    <svg viewBox="0 0 36 36" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="128" height="128"><title>Irene Morgan</title><mask id="mask__beam" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" fill="#FFFFFF"></rect></mask><g mask="url(#mask__beam)"><rect width="36" height="36" fill="#ff548f"></rect><rect x="0" y="0" width="36" height="36" transform="translate(-3 -3) rotate(87 18 18) scale(1)" fill="#be80ff" rx="36"></rect><g transform="translate(-7 -4) rotate(7 18 18)"><path d="M15 19c2 1 4 1 6 0" stroke="#000000" fill="none" stroke-linecap="round"></path><rect x="12" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect><rect x="22" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect></g></g></svg>
+    <svg viewBox="0 0 36 36" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="128" height="128"><title>Irene Morgan</title><mask id="mask__beam" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" fill="#FFFFFF"></rect></mask><g mask="url(#mask__beam)"><rect width="36" height="36" fill="#ff548f"></rect><rect x="0" y="0" width="36" height="36" transform="translate(-3 -3) rotate(87 18 18) scale(1)" fill="#be80ff" rx="36"></rect><g transform="translate(-7 -4) rotate(7 18 18)"><path d="M15 19c2 1 4 1 6 0" stroke="#000000" fill="none" strokeLinecap="round"></path><rect x="12" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect><rect x="22" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect></g></g></svg>
   </>,
   <>
     <svg viewBox="0 0 36 36" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="128" height="128"><title>Fannie Lou</title><mask id="mask__beam" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" fill="#FFFFFF"></rect></mask><g mask="url(#mask__beam)"><rect width="36" height="36" fill="#69d2e7"></rect><rect x="0" y="0" width="36" height="36" transform="translate(7 7) rotate(97 18 18) scale(1.1)" fill="#e0e4cc" rx="6"></rect><g transform="translate(3.5 3.5) rotate(-7 18 18)"><path d="M13,20 a1,0.75 0 0,0 10,0" fill="#000000"></path><rect x="12" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect><rect x="22" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect></g></g></svg>
@@ -20,7 +20,7 @@ export const AvatarIcons = [
 
 export const NetflixIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="302" height="82" fill="none" viewBox="0 0 302 82">
-    <g clip-path="url(#a)">
+    <g clipPath="url(#a)">
       <path fill="#D81F26" d="M41.526 76.356c-4.543.798-9.166 1.037-13.948 1.674L12.992 35.31v44.554C8.449 80.342 4.304 80.98 0 81.617V0h12.115l16.578 46.309V0h12.833v76.356ZM66.633 29.89c4.942 0 12.514-.239 17.057-.239v12.752c-5.66 0-12.275 0-17.057.24v18.97c7.492-.479 14.985-1.117 22.556-1.356V72.53l-35.31 2.79V0h35.31v12.753H66.633v17.136Zm69.98-17.136h-13.231v58.662c-4.304 0-8.608 0-12.752.16V12.752H97.4V0h39.214l-.001 12.753Zm20.723 16.26h17.456v12.752h-17.456v28.933h-12.514V0h35.629v12.753h-23.115v16.26Zm43.838 30.526c7.253.16 14.585.718 21.679 1.116v12.593c-11.397-.718-22.795-1.434-34.432-1.674V0h12.753v59.54Zm32.439 14.586c4.065.24 8.369.479 12.514.956V0h-12.514v74.125ZM302 0l-16.18 38.816L302 81.617c-4.783-.637-9.565-1.514-14.347-2.311l-9.166-23.592-9.324 21.68c-4.624-.798-9.088-1.038-13.71-1.675l16.419-37.381L257.047 0h13.708l8.369 21.44L288.052 0H302Z" />
     </g>
     <defs>
@@ -39,7 +39,7 @@ export const BellIcon = () => (
 
 export const SearchIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="transparent" viewBox="0 0 20 20">
-    <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M14.927 15.04 18.4 18.4m-1.12-8.96a7.84 7.84 0 1 1-15.68 0 7.84 7.84 0 0 1 15.68 0Z" />
+    <path stroke="currentColor" strokeLinecap="round" strokeWidth="2" d="M14.927 15.04 18.4 18.4m-1.12-8.96a7.84 7.84 0 1 1-15.68 0 7.84 7.84 0 0 1 15.68 0Z" />
   </svg>
 );
 
@@ -51,6 +51,6 @@ export const PlayIcon = () => (
 
 export const InfoIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 22 22">
-    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 11V6.2m0 8.358v.042m9.6-3.6a9.6 9.6 0 1 1-19.2 0 9.6 9.6 0 0 1 19.2 0Z" />
+    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 11V6.2m0 8.358v.042m9.6-3.6a9.6 9.6 0 1 1-19.2 0 9.6 9.6 0 0 1 19.2 0Z" />
   </svg>
 );
