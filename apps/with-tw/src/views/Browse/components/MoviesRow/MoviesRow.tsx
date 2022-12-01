@@ -1,8 +1,8 @@
 import type { Movie } from "@/lib/tmdb/tmdb.fetch";
-import { useDebouncer } from "../../hooks/use-debouncer";
-import { getFirstNotFalsy } from "../../utils/get-first-not-falsy";
-import { AspectRatio } from "../AspectRatio/AspectRatio";
-import { useHoverTrap } from "../HoverTrap/HoverTrap.context";
+import { hoverTrapStore } from "@/views/Browse/components/HoverTrap/store/HoverTrap.store";
+import { AspectRatio } from "@/views/Browse/components/AspectRatio/AspectRatio";
+import { getFirstNotFalsy } from "@/views/Browse/utils/get-first-not-falsy";
+import { useDebouncer } from "@/views/Browse/hooks/use-debouncer";
 import placeholder_movie_image from '@/assets/placeholder-movie.jpg';
 
 export const MoviesRow = ({ title, movies }: {
@@ -29,13 +29,11 @@ export const MoviesRow = ({ title, movies }: {
 const MovieRowItem = ({ movie }: {
   movie: Movie;
 }) => {
-  const hoverTrap = useHoverTrap();
-  const debounceHover = useDebouncer({ time: 300 });
+  const setHoveredItem = hoverTrapStore.useStore(s => s.setHoveredItem);
+  const debounceHover = useDebouncer({ time: 500 });
   const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     const node = e.currentTarget;
-    debounceHover.add(() => {
-      hoverTrap.setHoveredItem({ node, movie });
-    });
+    debounceHover.add(() => { setHoveredItem({ node, movie }); });
   };
   const handleMouseLeave = () => {
     debounceHover.clear();

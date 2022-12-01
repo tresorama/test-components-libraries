@@ -1,6 +1,6 @@
-export const getFirstNotFalsy = <O, T,>(options: O[], fallback: T) => {
+export const getFirstNotFalsy = <O, F,>(options: O[], fallback: F) => {
   for (const option of options) {
-    if (option) return option;
+    if (option !== null && option !== undefined) return option;
   }
   return fallback;
 };

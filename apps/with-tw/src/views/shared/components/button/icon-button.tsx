@@ -1,4 +1,4 @@
-import { SVGIcon } from "../svg-icon/svg-icon";
+// import { SVGIcon } from "../icons/svg-icon";
 
 export const IconButton = ({ icon, color = "gray", size = "md" }: {
   icon: React.ReactNode,
@@ -18,7 +18,8 @@ export const IconButton = ({ icon, color = "gray", size = "md" }: {
     ${color === 'outline' ? "border border-white text-white" : ''} 
     `}>
       <div className="w-[1.35em]">
-        <SVGIcon icon={icon} />
+        {icon}
+        {/* <SVGIcon icon={icon} /> */}
       </div>
     </button>
   );

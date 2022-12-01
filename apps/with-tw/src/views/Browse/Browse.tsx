@@ -1,16 +1,14 @@
 import React from "react";
 import type { PageProps } from "@/pages/browse";
-import { SVGIcon } from "@/views/shared/components/svg-icon/svg-icon";
-import { AvatarIcons, BellIcon, InfoIcon, NetflixIcon, PlayIcon, SearchIcon } from "@/views/shared/components/icons";
+import { SVGIcon } from "@/views/shared/components/icons/svg-icon";
+import { AvatarIcons, BellIcon, InfoIcon, NetflixIcon, PlayIcon, SearchIcon } from "@/views/shared/components/icons/icons";
 import { Button } from "@/views/shared/components/button/button";
-import { HoverTrapProvider } from "./components/HoverTrap/HoverTrap.context";
 import { useScrollPosition } from "./hooks/use-scroll-position";
 import { useTrailerVideo } from "./hooks/use-trailer-video";
 import { HoverTrapRenderer } from "./components/HoverTrap/HoverTrapRenderer";
 import { MoviesRow } from "./components/MoviesRow/MoviesRow";
 
 export const BrowseView = ({ movies }: PageProps) => {
-  const scrollPosition = useScrollPosition();
   const TrailerVideo = useTrailerVideo({ videoId: "DpJsmKhp9yo" });
 
   return (
@@ -21,36 +19,7 @@ export const BrowseView = ({ movies }: PageProps) => {
         {/* <pre>{JSON.stringify(movies, null, 2)}</pre> */}
 
         {/* NAV TOP BAR */}
-        <div className={`fixed z-50 top-0 left-0 right-0 h-[70px]  ${scrollPosition.isAtTop ? 'bg-gradient-to-b from-black' : 'bg-black'}`}>
-          <div className="px-4 h-full flex items-center gap-8">
-            {/* LOGO */}
-            <div className="w-[80px]">
-              <SVGIcon icon={<NetflixIcon />} />
-            </div>
-            {/* NAV */}
-            <div className="flex gap-2">
-              {['Sfoglia'].map(item_name => (
-                <div key={item_name} className="text-sm">
-                  <span>{item_name}</span>
-                </div>
-              ))}
-            </div>
-            {/* BUTTONS */}
-            <div className="ml-auto">
-              <div className="flex items-center gap-6">
-                <div className="w-[28px]">
-                  <SVGIcon icon={<SearchIcon />} />
-                </div>
-                <div className="w-[30px]">
-                  <SVGIcon icon={<BellIcon />} />
-                </div>
-                <div className="w-[50px] rounded overflow-hidden">
-                  <SVGIcon icon={AvatarIcons[0]} />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <TopNavBar />
 
         {/* HERO */}
         <div className="relative z-0 min-h-[300px] overflow-hidden">
@@ -76,31 +45,76 @@ export const BrowseView = ({ movies }: PageProps) => {
         </div>
 
         {/* STACKS OF TITLES  */}
-        <HoverTrapProvider>
-          <MoviesRow
-            title="New Arrivals"
-            movies={movies.new_arrivals}
-          />
-          <MoviesRow
-            title="XXX, continua to watch:"
-            movies={movies.continue_to_watch}
-          />
-          <MoviesRow
-            title="Trendings Now"
-            movies={movies.trendings_now}
-          />
-          <MoviesRow
-            title="Sitcoms"
-            movies={movies.sitcoms}
-          />
-          <MoviesRow
-            title="Documentaries"
-            movies={movies.documentaries}
-          />
-          <HoverTrapRenderer />
-        </HoverTrapProvider>
+        <MoviesRow
+          title="New Arrivals"
+          movies={movies.new_arrivals}
+        />
+        <MoviesRow
+          title="XXX, continua to watch:"
+          movies={movies.continue_to_watch}
+        />
+        <MoviesRow
+          title="Trendings Now"
+          movies={movies.trendings_now}
+        />
+        <MoviesRow
+          title="Sitcoms"
+          movies={movies.sitcoms}
+        />
+        <MoviesRow
+          title="Documentaries"
+          movies={movies.documentaries}
+        />
+        <HoverTrapRenderer />
 
       </div >
+    </>
+  );
+};
+
+// Compoenents
+const TopNavBar = () => {
+  const scrollPosition = useScrollPosition();
+
+  return (
+    <>
+      <div className={`fixed z-50 top-0 left-0 right-0 h-[70px]  ${scrollPosition.isAtTop ? 'bg-gradient-to-b from-black' : 'bg-black'}`}>
+        <div className="px-4 h-full flex items-center gap-8">
+          {/* LOGO */}
+          <div className="w-[80px]">
+            <NetflixIcon />
+            {/* <SVGIcon icon={<NetflixIcon />} /> */}
+          </div>
+          {/* NAV */}
+          <div className="flex gap-2">
+            {['Sfoglia'].map(item_name => (
+              <div key={item_name} className="text-sm">
+                <span>{item_name}</span>
+              </div>
+            ))}
+          </div>
+          {/* BUTTONS */}
+          <div className="ml-auto">
+            <div className="flex items-center gap-6">
+              <div className="w-[28px]">
+                <SearchIcon />
+                {/* <SVGIcon icon={<SearchIcon />} /> */}
+              </div>
+              <div className="w-[30px]">
+                <BellIcon />
+                {/* <SVGIcon icon={<BellIcon />} /> */}
+              </div>
+              <div className="w-[50px] rounded overflow-hidden">
+                {(() => {
+                  const Icon = AvatarIcons[0];
+                  return <Icon />;
+                })()}
+                {/* <SVGIcon icon={AvatarIcons[0]} /> */}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

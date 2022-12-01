@@ -1,4 +1,4 @@
-import { SVGIcon } from "../svg-icon/svg-icon";
+// import { SVGIcon } from "../icons/svg-icon";
 
 export const Button = ({ text, leftIcon, rightIcon, color = "gray", size = "md" }: {
   text?: string,
@@ -21,7 +21,8 @@ export const Button = ({ text, leftIcon, rightIcon, color = "gray", size = "md" 
     `}>
       {leftIcon && (
         <div className="w-[1.35em] -ml-1">
-          <SVGIcon icon={leftIcon} />
+          {leftIcon}
+          {/* <SVGIcon icon={leftIcon} /> */}
         </div>
       )}
       {text && (
@@ -29,7 +30,8 @@ export const Button = ({ text, leftIcon, rightIcon, color = "gray", size = "md" 
       )}
       {rightIcon && (
         <div className="w-[1.35em] -ml-1">
-          <SVGIcon icon={rightIcon} />
+          {rightIcon}
+          {/* <SVGIcon icon={rightIcon} /> */}
         </div>
       )}
     </button>

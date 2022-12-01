@@ -1,6 +1,6 @@
 import React from "react";
 import type { Movie } from "@/lib/tmdb/tmdb.fetch";
-import { useDebouncer } from "../../hooks/use-debouncer";
+import { useDebouncer } from "../../../hooks/use-debouncer";
 
 // Context Value
 type HoverTrapState = {
