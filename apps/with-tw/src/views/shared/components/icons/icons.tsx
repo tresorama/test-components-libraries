@@ -1,4 +1,4 @@
-import { SVGIcon } from "./svg-icon";
+import { SVGIcon } from "./SVGIcon";
 
 export const AddIcon = () => (
   <SVGIcon

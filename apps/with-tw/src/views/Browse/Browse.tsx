@@ -1,8 +1,8 @@
 import React from "react";
 import type { PageProps } from "@/pages/browse";
-import { SVGIcon } from "@/views/shared/components/icons/svg-icon";
-import { AvatarIcons, BellIcon, InfoIcon, NetflixIcon, PlayIcon, SearchIcon } from "@/views/shared/components/icons/icons";
-import { Button } from "@/views/shared/components/button/button";
+import { SVGIcon } from "@/views/shared/components/Icons/SVGIcon";
+import { AvatarIcons, BellIcon, InfoIcon, NetflixIcon, PlayIcon, SearchIcon } from "@/views/shared/components/Icons/Icons";
+import { Button } from "@/views/shared/components/Button/Button";
 import { useScrollPosition } from "./hooks/use-scroll-position";
 import { useTrailerVideo } from "./hooks/use-trailer-video";
 import { HoverTrapRenderer } from "./components/HoverTrap/HoverTrapRenderer";

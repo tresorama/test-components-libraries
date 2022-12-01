@@ -1,5 +1,5 @@
 // import { SVGIcon } from "@/views/shared/components/icons/svg-icon";
-import { AddIcon, AvatarIcons } from "@/views/shared/components/icons/icons";
+import { AddIcon, AvatarIcons } from "@/views/shared/components/Icons/Icons";
 import Link from "next/link";
 
 export const HomeView = () => (

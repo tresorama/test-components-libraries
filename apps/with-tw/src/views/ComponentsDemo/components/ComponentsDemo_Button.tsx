@@ -1,6 +1,6 @@
-import { Button } from "@/views/shared/components/button/button";
-import { IconButton } from "@/views/shared/components/button/icon-button";
-import { PlayIcon } from "@/views/shared/components/icons/icons";
+import { Button } from "@/views/shared/components/Button/Button";
+import { IconButton } from "@/views/shared/components/Button/IconButton";
+import { PlayIcon } from "@/views/shared/components/Icons/Icons";
 
 export const ComponentsDemo_Button = () => (
   <>

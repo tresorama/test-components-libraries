@@ -1,8 +1,8 @@
 import type { Movie } from "@/lib/tmdb/tmdb.fetch";
 import { useTrailerVideo } from "@/views/Browse/hooks/use-trailer-video";
 import { getFirstNotFalsy } from "@/views/Browse/utils/get-first-not-falsy";
-import { IconButton } from "@/views/shared/components/button/icon-button";
-import { PlayIcon } from "@/views/shared/components/icons/icons";
+import { IconButton } from "@/views/shared/components/Button/IconButton";
+import { PlayIcon } from "@/views/shared/components/Icons/Icons";
 import { AspectRatio } from "@/views/Browse/components/AspectRatio/AspectRatio";
 import { useTimeout } from "./hooks/use-timeout";
 import { useToggle } from "./hooks/use-toggle";
