@@ -106,8 +106,8 @@ const TopNavBar = () => {
 
 const Hero = () => {
   const ratio = (ratio: number) => Math.round((1 / ratio * 100)).toFixed(0);
-  const videoHeight = ratio(16 / 9);
-  const c = "rgb(24 24 27 / 1)";
+  const videoHeight = `h-[${ratio(16 / 9)}vw] min-h-[300px] max-h-[80vh]`;
+  const c = "#141414";
 
   const TrailerVideo = useTrailerVideo({
     videoId: "DpJsmKhp9yo",
@@ -116,7 +116,7 @@ const Hero = () => {
   });
 
   return (
-    <div className={`relative h-[${videoHeight}vw] min-h-[300px] max-h-[80vh]`}>
+    <div className={`relative ${videoHeight}`}>
       <div className="absolute inset-0 w-full h-full pointer-events-none">
         <TrailerVideo />
       </div>
