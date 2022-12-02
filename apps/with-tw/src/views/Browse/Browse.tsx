@@ -11,7 +11,7 @@ export const BrowseView = ({ movies }: PageProps) => {
 
   return (
     <>
-      <div className="min-h-[2000px] w-screen bg-zinc-900 text-white">
+      <div className="min-h-[2000px] w-screen bg-[#141414] text-white">
 
         {/* DEBUG */}
         {/* <pre>{JSON.stringify(movies, null, 2)}</pre> */}
@@ -66,7 +66,8 @@ const TopNavBar = () => {
 
   return (
     <>
-      <div className={`fixed top-0 left-0 right-0 h-[70px]  ${scrollPosition.isAtTop ? 'bg-gradient-to-b from-black' : 'bg-black'}`}>
+      <div className={`fixed top-0 left-0 right-0 h-[70px] ${scrollPosition.isAtTop ? 'bg-transparent' : 'bg-[#141414]'} transition-colors`}>
+        <div className="absolute z-[-1] inset-0 bg-gradient-to-b from-black"></div>
         <div className="px-4 h-full flex items-center gap-8">
           {/* LOGO */}
           <div className="w-[80px]">
