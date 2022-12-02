@@ -105,8 +105,7 @@ const TopNavBar = () => {
 };
 
 const Hero = () => {
-  const ratio = (ratio: number) => Math.round((1 / ratio * 100)).toFixed(0);
-  const videoHeight = `h-[${ratio(16 / 9)}vw] min-h-[300px] max-h-[80vh]`;
+  const videoHeight = `h-[56vw] min-h-[300px] max-h-[80vh]`;// example 16/9 => 1 / (16/9) * 100
   const c = "#141414";
 
   const TrailerVideo = useTrailerVideo({
