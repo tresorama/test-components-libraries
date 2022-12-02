@@ -85,3 +85,32 @@ export const InfoIcon = () => (
     }
   />
 );
+
+export const CheckIcon = () => (
+  <SVGIcon
+    icon={
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m16.8 8.4-7.16 7.2-2.44-2.454" />
+      </svg>
+    }
+  />
+);
+
+export const PlusIcon = () => (
+  <SVGIcon
+    icon={
+      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" fill="none" viewBox="0 0 25 24">
+        <path stroke="currentColor" strokeLinecap="round" strokeWidth="2" d="M12.5 7.2v9.6m4.8-4.8H7.7" />
+      </svg>
+    }
+  />
+);
+export const ChevronDownIcon = () => (
+  <SVGIcon
+    icon={
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16.8 9.6 12 14.4 7.2 9.6" />
+      </svg>
+    }
+  />
+);

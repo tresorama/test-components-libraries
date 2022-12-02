@@ -1,4 +1,3 @@
-// import { SVGIcon } from "@/views/shared/components/icons/svg-icon";
 import { AddIcon, AvatarIcons } from "@/views/shared/components/Icons/Icons";
 import Link from "next/link";
 
@@ -28,7 +27,6 @@ export const HomeView = () => (
                 <Link href="#" className="absolute inset-0" />
                 <div className="p-5">
                   <AddIcon />
-                  {/* <SVGIcon icon={<AddIcon />} /> */}
                 </div>
               </div>
               <div className="text-sm">Aggiungi un profilo</div>

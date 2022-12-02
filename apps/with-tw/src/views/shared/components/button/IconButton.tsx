@@ -1,5 +1,3 @@
-// import { SVGIcon } from "../icons/svg-icon";
-
 export const IconButton = ({ icon, color = "gray", size = "md" }: {
   icon: React.ReactNode,
   size?: "sm" | "md" | "lg";
@@ -9,17 +7,16 @@ export const IconButton = ({ icon, color = "gray", size = "md" }: {
     <button
       type="button"
       className={`
-    flex items-center rounded-[50%] 
-    ${size === 'sm' ? "p-1 text-sm" : ''} 
-    ${size === 'md' ? "p-1.5 text-md" : ''} 
-    ${size === 'lg' ? "p-2 text-lg" : ''} 
+    flex items-center justify-center rounded-[50%] 
+    ${size === 'sm' ? "text-xs min-w-[2.3em] min-h-[2.3em]" : ''} 
+    ${size === 'md' ? "text-sm min-w-[2.5em] min-h-[2.5em]" : ''} 
+    ${size === 'lg' ? "text-md min-w-[2.6em] min-h-[2.6em]" : ''} 
     ${color === 'gray' ? "bg-gray-500 text-white" : ''} 
     ${color === 'primary' ? "bg-white text-black" : ''} 
-    ${color === 'outline' ? "border border-white text-white" : ''} 
+    ${color === 'outline' ? "border-2 border-gray-400 text-white" : ''} 
     `}>
-      <div className="w-[1.35em]">
+      <div className="w-[1em]">
         {icon}
-        {/* <SVGIcon icon={icon} /> */}
       </div>
     </button>
   );

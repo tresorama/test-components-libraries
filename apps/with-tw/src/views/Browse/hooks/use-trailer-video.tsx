@@ -1,10 +1,15 @@
 import React from "react";
 import YouTube, { YouTubeProps } from "react-youtube";
 
-export const useTrailerVideo = ({ videoId, height }: { videoId: string; height?: string; }) => {
+export const useTrailerVideo = ({ videoId, width, height }: {
+  videoId: string;
+  width?: string;
+  height?: string;
+}) => {
+
   const opts: YouTubeProps['opts'] = {
     width: '100%',
-    ...(height && { height }),
+    height: '100%',
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
       autoplay: 1,
@@ -24,11 +29,17 @@ export const useTrailerVideo = ({ videoId, height }: { videoId: string; height?:
 
   const Component = React.useMemo(() => function VideoComponent() {
     return (
-      <YouTube
-        videoId={videoId}
-        opts={opts}
-        onReady={onPlayerReady}
-      />
+      <>
+        <YouTube
+          style={{
+            width,
+            height,
+          }}
+          videoId={videoId}
+          opts={opts}
+          onReady={onPlayerReady}
+        />
+      </>
     );
   }, [videoId]);
 

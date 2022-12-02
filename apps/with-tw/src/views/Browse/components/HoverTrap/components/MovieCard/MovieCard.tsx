@@ -2,7 +2,7 @@ import type { Movie } from "@/lib/tmdb/tmdb.fetch";
 import { useTrailerVideo } from "@/views/Browse/hooks/use-trailer-video";
 import { getFirstNotFalsy } from "@/views/Browse/utils/get-first-not-falsy";
 import { IconButton } from "@/views/shared/components/Button/IconButton";
-import { PlayIcon } from "@/views/shared/components/Icons/Icons";
+import { CheckIcon, ChevronDownIcon, PlayIcon, PlusIcon } from "@/views/shared/components/Icons/Icons";
 import { AspectRatio } from "@/views/Browse/components/AspectRatio/AspectRatio";
 import { useTimeout } from "./hooks/use-timeout";
 import { useToggle } from "./hooks/use-toggle";
@@ -15,7 +15,7 @@ export const MovieCard = ({ movie }: {
   useTimeout(toggleIsVisibleVideo, 400);
 
   return (
-    <div className="w-full shadow-[0_0_100px_black] rounded-lg">
+    <div className="w-full shadow-[0_0_100px_black] rounded-lg overflow-hidden bg-black">
 
       {/* IMAGE */}
       <style jsx global>{`
@@ -30,7 +30,7 @@ export const MovieCard = ({ movie }: {
           {({ paddingBottom }) => (
             <div className="w-full relative" style={{ paddingBottom }}>
               {isVisibleVideo && (
-                <div className="absolute inset-0 w-full">
+                <div className="absolute inset-0 w-full h-full">
                   <TrailerVideo />
                 </div>
               )}
@@ -54,28 +54,28 @@ export const MovieCard = ({ movie }: {
       </div>
 
       {/* DETAILS */}
-      <div className="pb-4 bg-zinc-800">
-        <div className="px-2 py-2 flex gap-2">
+      <div className="bg-zinc-900">
+        <div className="py-4 px-4 flex gap-2">
           <IconButton color="primary" size="sm" icon={<PlayIcon />} />
-          <IconButton color="outline" size="sm" icon={<PlayIcon />} />
-          <IconButton color="outline" size="sm" icon={<PlayIcon />} />
+          <IconButton color="outline" size="sm" icon={<CheckIcon />} />
+          <IconButton color="outline" size="sm" icon={<PlusIcon />} />
           <div className="ml-auto">
-            <IconButton color="outline" size="sm" icon={<PlayIcon />} />
+            <IconButton color="outline" size="sm" icon={<ChevronDownIcon />} />
           </div>
         </div>
-        <div className="mt-2 px-2">
-          <span className="text-green-500 text-sm">95% compatibile</span>
+        <div className="px-4">
+          <span className="text-green-400 text-md font-medium">95% compatibile</span>
           <div className="flex flex-wrap items-baseline">
-            <span className="px-1 text-sm leading-none border">16+</span>
-            <span className="px-2 text-sm leading-none">5 stagioni</span>
-            <span className="px-1 text-sm leading-none border">HD</span>
+            <span className="px-1.5 text-md leading-none border border-gray-500 font-light">16+</span>
+            <span className="px-2 text-md leading-none font-light">5 stagioni</span>
+            <span className="px-1.5 text-sm leading-none border border-gray-500 rounded font-light">HD</span>
           </div>
         </div>
-        <div className="mt-2 px-2">
-          <div className="flex flex-wrap gap-x-2">
+        <div className="pt-2 pb-6 px-4">
+          <div className="flex flex-wrap">
             {['Profondo', 'Dramma', "Corridoi del potere"].map((tag, i) => (
-              <span key={tag} className="text-gray-400 text-sm">
-                {i !== 0 && (<span>・ </span>)}
+              <span key={tag} className="text-gray-100 text-md font-light">
+                {i !== 0 && (<span>・</span>)}
                 {tag}
               </span>
             ))}
@@ -87,6 +87,10 @@ export const MovieCard = ({ movie }: {
 };
 
 const TrailerVideo = () => {
-  const TrailerVideo = useTrailerVideo({ videoId: "DpJsmKhp9yo", height: '100%' });
-  return <TrailerVideo />;
+  const Video = useTrailerVideo({
+    videoId: "DpJsmKhp9yo",
+    width: '100%',
+    height: '100%',
+  });
+  return <Video />;
 };
