@@ -27,7 +27,7 @@ export const BrowseView = ({ movies }: PageProps) => {
         </div>
 
         {/* STACKS OF TITLES  */}
-        <div className="relative z-10">
+        <div className="relative z-10 -mt-[5vh] md:-mt-[8vh]">
           <MoviesRow
             title="New Arrivals"
             movies={movies.new_arrivals}
