@@ -1,65 +1,83 @@
 import { useScrollPosition } from "@/views/Browse/hooks/use-scroll-position";
 import { hoverTrapStore } from "./store/HoverTrap.store";
 import { MovieCard } from "./components/MovieCard/MovieCard";
+import { AnimatePresence, motion } from "framer-motion";
+import { useDebouncer } from "../../hooks/use-debouncer";
 
-const useRerenderOnScroll = useScrollPosition;
 
 export const HoverTrapRenderer = () => {
   const hoveredItem = hoverTrapStore.useStore(s => s.hoveredItem);
+  return (
+    <div className="fixed inset-0 pointer-events-none">
+      <AnimatePresence>
+        {hoveredItem !== null && <Item hoveredItem={hoveredItem} />}
+      </AnimatePresence>
+    </div>
+  );
+};
+
+type HoveredItem = Exclude<ReturnType<typeof hoverTrapStore['get']>['hoveredItem'], null>;
+const useRerenderOnScroll = useScrollPosition;
+
+const Item = ({ hoveredItem }: { hoveredItem: HoveredItem; }) => {
   const removeHoveredItem = hoverTrapStore.useStore(s => s.removeHoveredItem);
   useRerenderOnScroll();
-  if (hoveredItem === null) return <></>;
+  const debounceRemove = useDebouncer({ time: 200 });
 
   // calculate where to put the card
   const { node, movie } = hoveredItem;
+  const ZOOM = 1.35;
   const clientRect = node.getBoundingClientRect();
   const hAligned: 'l' | 'c' | 'r' = (() => {
     const hslice = clientRect.left / window.innerWidth;
     if (hslice < 0.33) return 'l';
-    if (hslice >= 0.33 && hslice < 0.66) return 'c';
+    if (hslice < 0.60) return 'c';
     return 'r';
   })();
-  const width = clientRect.width * 1.35;
-  const height = clientRect.height;
-  const top = clientRect.top + (clientRect.height * 0.5);
+  const width = clientRect.width * ZOOM;
+  const height = clientRect.height * ZOOM;
+  const top = clientRect.top - (clientRect.height * 0.2);
   const left = {
     "l": clientRect.left,
     "c": clientRect.left - ((width - clientRect.width) / 2),
     "r": clientRect.left - (width - clientRect.width),
   }[hAligned];
+
+  // calculate animation props
   const transformOrigin = {
-    "l": 'top left',
-    "c": "top center",
-    "r": "top right"
+    "l": 'center left',
+    "c": "center center",
+    "r": "center right"
   }[hAligned];
 
   return (
-    <div className="fixed inset-0 pointer-events-none">
-      <style jsx global>{`
-      @keyframes expand {
-        from { transform: scale(0.74);}
-        to { transform: scale(1); }
-      }
-      `}
-      </style>
-      <div
-        onMouseLeave={removeHoveredItem}
-        className="pointer-events-auto animate-[expand_250ms_ease-in-out] flex items-center"
-        style={{
-          position: 'absolute',
-          width,
-          height,
-          top,
-          left,
-          transformOrigin,
-        }}
-      >
-        <div className="absolute w-full">
-          <MovieCard movie={movie} />
-        </div>
-      </div>
-    </div>
+    <motion.div
+      onMouseLeave={() => { debounceRemove.add(removeHoveredItem); }}
+      className="pointer-events-auto absolute"
+      style={{
+        top,
+        left,
+        width,
+        height,
+        transformOrigin,
+      }}
+      initial={{
+        scale: 1 / ZOOM,
+      }}
+      animate={{
+        scale: 1,
+      }}
+      exit={{
+        scale: 1 / ZOOM
+      }}
+      transition={{
+        type: 'spring',
+        mass: 0.15,
+      }}
+    >
+      <MovieCard movie={movie} />
+    </motion.div>
   );
-};
+}
 
 

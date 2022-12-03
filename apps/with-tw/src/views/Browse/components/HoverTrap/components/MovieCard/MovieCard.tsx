@@ -7,6 +7,7 @@ import { AspectRatio } from "@/views/Browse/components/AspectRatio/AspectRatio";
 import { useTimeout } from "./hooks/use-timeout";
 import { useToggle } from "./hooks/use-toggle";
 import placeholder_movie_image from '@/assets/placeholder-movie.jpg';
+import { motion } from 'framer-motion';
 
 export const MovieCard = ({ movie }: {
   movie: Movie;
@@ -15,17 +16,10 @@ export const MovieCard = ({ movie }: {
   useTimeout(toggleIsVisibleVideo, 400);
 
   return (
-    <div className="w-full shadow-[0_0_100px_black] rounded-lg overflow-hidden bg-black">
+    <div className="w-full shadow-[0_0_100px_black] rounded-lg overflow-hidden ">
 
       {/* IMAGE */}
-      <style jsx global>{`
-      @keyframes fade-out {
-        from { opacity: 1;}
-        to { opacity: 0; }
-      }
-      `}
-      </style>
-      <div className="w-full overflow-hidden">
+      <div className="w-full overflow-hidden bg-black">
         <AspectRatio ratio={16 / 9}>
           {({ paddingBottom }) => (
             <div className="w-full relative" style={{ paddingBottom }}>
@@ -34,19 +28,21 @@ export const MovieCard = ({ movie }: {
                   <TrailerVideo />
                 </div>
               )}
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                className={`
-                  absolute inset-0 w-full h-full 
-                  object-cover object-bottom 
-                  ${isVisibleVideo ? "animate-[fade-out_1s_2s_1_both]" : ""}
-                `}
+              <motion.img
+                className="absolute inset-0 w-full h-full object-cover object-bottom"
                 alt={movie.title}
                 src={getFirstNotFalsy([
                   movie.images.poster.w342,
                   movie.images.poster.w185,
                   movie.images.poster.original
                 ], placeholder_movie_image.src)}
+                animate={{
+                  opacity: isVisibleVideo ? 0 : 1
+                }}
+                transition={{
+                  type: 'tween',
+                  delay: 1.4,
+                }}
               />
             </div>
           )}
@@ -54,7 +50,10 @@ export const MovieCard = ({ movie }: {
       </div>
 
       {/* DETAILS */}
-      <div className="bg-zinc-900">
+      <motion.div
+        className="bg-zinc-900"
+        exit={{ opacity: 0 }}
+      >
         <div className="py-4 px-4 flex gap-2">
           <IconButton color="primary" size="sm" icon={<PlayIcon />} />
           <IconButton color="outline" size="sm" icon={<CheckIcon />} />
@@ -81,7 +80,7 @@ export const MovieCard = ({ movie }: {
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
