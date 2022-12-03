@@ -4,7 +4,7 @@ export const AddIcon = () => (
   <SVGIcon
     icon={
       <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="currentColor" viewBox="0 0 120 120">
-        <path fill-rule="evenodd" d="M60 119.226c32.834 0 59.452-26.618 59.452-59.452S92.834.323 60 .323.548 26.94.548 59.774 27.166 119.226 60 119.226ZM52.4 22h15.2v30.4H98v15.2H67.6V98H52.4V67.6H22V52.4h30.4V22Z" clip-rule="evenodd" />
+        <path fillRule="evenodd" d="M60 119.226c32.834 0 59.452-26.618 59.452-59.452S92.834.323 60 .323.548 26.94.548 59.774 27.166 119.226 60 119.226ZM52.4 22h15.2v30.4H98v15.2H67.6V98H52.4V67.6H22V52.4h30.4V22Z" clip-rule="evenodd" />
       </svg>
     }
   />
